@@ -50,15 +50,22 @@ function TempTable() {
         alignItems: 'center',
       }}
     >
+      <h2>Dernière Température : {data[data.length - 1]?.temp}°C</h2>
+
       {/* Graphique des températures */}
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={400}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="time" />
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="temp" stroke="#8884d8" />
+          <Line
+            type="monotone"
+            dataKey="temp"
+            stroke="#007bff"
+            strokeWidth={2}
+          />
         </LineChart>
       </ResponsiveContainer>
 
